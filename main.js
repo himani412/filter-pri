@@ -1,4 +1,7 @@
+nosex=0;
+nosey=0;
 function preload(){
+    imagelip=loadImage('https://i.postimg.cc/PxFvYgkv/l1.png');
 }
 function setup(){
     canvas=createCanvas(300,300);
@@ -16,13 +19,16 @@ function modelLoaded(){
 function gotPoses(results){
     if(results.length>0){
         console.log(results);
-        console.log("nose x = ")+results[0].pose.nose.x;
-        console.log("nose y = ")+results[0].pose.nose.y;
+        nosex=results[0].pose.nose.x+20;
+        nosey=results[0].pose.nose.y+20;
+        console.log("nose x = "+nosex);
+        console.log("nose y = "+nosey);
     }
 }  
 
 function draw(){
     image(video,0,0,300,300);
+image(imagelip,nosex,nosey,40,30);
 }
 function takesnapshot(){
     save('Himani.png');
