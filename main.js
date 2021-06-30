@@ -19,7 +19,7 @@ function modelLoaded(){
 function gotPoses(results){
     if(results.length>0){
         console.log(results);
-        nosex=results[0].pose.nose.x+20;
+        nosex=results[0].pose.nose.x-20;
         nosey=results[0].pose.nose.y+20;
         console.log("nose x = "+nosex);
         console.log("nose y = "+nosey);
@@ -28,7 +28,7 @@ function gotPoses(results){
 
 function draw(){
     image(video,0,0,300,300);
-image(imagelip,nosex,nosey,40,30);
+image(imagelip,nosex,nosey,30,20);
 }
 function takesnapshot(){
     save('Himani.png');
